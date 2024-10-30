@@ -23,16 +23,16 @@ https://code.visualstudio.com/docs/python/environments
 4. Instalar los requerimientos con `pip install -r requirements.txt`
 
 
-## Instalación de Todo sqlite file
+## Instalación de Todo sqlite file en caso de usar Models
 
 data_db/ToDo.sqlite
 ```sqlite
 create table Todo
 (
-    id       integer not null
+    id integer not null
         constraint Todo_pk
             primary key autoincrement,
-    text     TEXT,
+    text TEXT,
     complete INT
 );
 ```
@@ -46,14 +46,10 @@ flask run
 ## Parámetros .env
  
 ```bash
-NINJA_FORM_SOURCE=XXXXXXXXXXXXXXXX
-NINJA_FORM_KEY=XXXXXXXXXXXXXXXX
 USER_1=XXXXXXXXXx
 PASSWORD_1=XXXXXXXX
 ```
 ### Descripción de los parámetros:
-NINJA_FORM_SOURCE: Es la URL de Ninja Forms ex. https://ninjaforms.com/wp-json/ninja-forms-scheduled-exports/v1/submission-export/
-NINJA_FORM_KEY: Es la Key de acceso a Ninja Forms
 USER_1: Es el usuario de Basic HTTP Auth
 PASSWORD_1: Es la contraseña de Basic HTTP Auth
 
@@ -62,11 +58,11 @@ PASSWORD_1: Es la contraseña de Basic HTTP Auth
 
 Construye y ejecuta la imagen de Docker
 ```bash
-docker-compose -p flask_app_24e_app up -d
+docker-compose -p flask_app up -d
 ```
 
 ## Parar Docker
 
 ```bash
-docker-compose -p flask_app_24e_app down
+docker-compose -p flask_app down
 ```

@@ -1,7 +1,6 @@
-from flask import render_template, request, redirect, url_for, Response
+from flask import render_template
 from app import app
-from flask_httpauth import HTTPBasicAuth
-from werkzeug.security import generate_password_hash, check_password_hash
+from werkzeug.security import check_password_hash
 from app.auth.basic_auth.basic_auth import basic_auth_auth, basic_auth_users
 
 
