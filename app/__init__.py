@@ -1,11 +1,18 @@
-from flask import Flask
-# from flask_sqlalchemy import SQLAlchemy
-# import os
+from flask import Flask, render_template
+from app.config import Config
 
-app = Flask(__name__)
 
-# file_path = os.path.abspath(os.getcwd()) + "/data_db/ToDo.sqlite"
-# app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///' + file_path
-# db = SQLAlchemy(app)
+def create_app():
+    _app = Flask(__name__)
+    _app.config.from_object(Config)
+    from . import routes
+    routes.init_app(_app)
+    return _app
 
-from app import routes
+
+app = create_app()
+
+
+@app.route('/')
+def index():
+    return render_template('index.html')
