@@ -5,7 +5,8 @@ from app.config import Config
 def create_app():
     _app = Flask(__name__)
     _app.config.from_object(Config)
-    from . import routes
+    from . import models, routes
+    models.init_app(_app)
     routes.init_app(_app)
     return _app
 
