@@ -1,0 +1,15 @@
+### Ping to the (same server)
+GET {{host}}/test/test-connection
+
+### Test Token used (same server)
+GET {{host}}/test/test-jwt-protected
+Authorization: Bearer {{token}}
+
+### Test Connection to Backend Melian ED
+### Test anonimous user
+GET {{host}}/test/melian-ed/test-connection
+Authorization: Bearer {{token}}
+
+### Test with User Token
+GET {{host}}/test/melian-ed/test-user-connection
+Authorization: Bearer {{token}}

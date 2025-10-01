@@ -1,0 +1,15 @@
+### Test normal connection (Anonymous user)
+GET {{host}}/jwt-auth/test-connection
+
+### Login
+POST {{host}}/jwt-auth/login
+Content-Type: application/json
+
+{
+  "username": "{{user}}",
+  "password": "{{password}}"
+}
+
+### Test connection with token
+GET {{host}}/jwt-auth/test-jwt-protected
+Authorization: Bearer {{token}}
